@@ -1,0 +1,52 @@
+name: Hexo Auto Deploy
+
+on:
+  push:
+    branches:
+      - main  # 当你把源码推送到 main 分支时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. 拉取你的源码
+    - name: Checkout source
+      uses: actions/checkout@v3
+      with:
+        submodules: true # 如果你的主题是 git clone 下来的，这行很重要
+
+    # 2. 安装 Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # 推荐用较新的 LTS 版本
+
+    # 3. 缓存依赖 (加快构建速度)
+    - name: Cache NPM dependencies
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    # 4. 安装 Hexo 和依赖
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -g hexo-cli
+
+    # 5. 生成静态文件
+    - name: Generate Hexo Site
+      run: hexo generate
+
+    # 6. 部署到 gh-pages 分支
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.HEXO_DEPLOY_KEY }} # 读取刚才设置的 Secret
+        publish_dir: ./public  # 把生成的 public 文件夹推上去
+        publish_branch: gh-pages # 推送到 gh-pages 分支
+        user_name: "github-actions[bot]"
+        user_email: "github-actions[bot]@users.noreply.github.com"
