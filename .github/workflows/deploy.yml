@@ -28,15 +28,6 @@ jobs:
         node-version: '22' # 推荐用较新的 LTS 版本
         cache: 'npm'
 
-    # 3. 缓存依赖 (加快构建速度)
-    - name: Cache NPM dependencies
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
     # 4. 安装 Hexo 和依赖
     - name: Install dependencies
       run: |
