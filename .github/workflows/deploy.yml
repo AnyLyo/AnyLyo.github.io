@@ -7,6 +7,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,15 +17,16 @@ jobs:
     steps:
     # 1. 拉取你的源码
     - name: Checkout source
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: true # 如果你的主题是 git clone 下来的，这行很重要
 
     # 2. 安装 Node.js
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '18' # 推荐用较新的 LTS 版本
+        node-version: '22' # 推荐用较新的 LTS 版本
+        cache: 'npm'
 
     # 3. 缓存依赖 (加快构建速度)
     - name: Cache NPM dependencies
@@ -45,7 +49,7 @@ jobs:
 
     # 6. 部署到 gh-pages 分支
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.HEXO_DEPLOY_KEY }} # 读取刚才设置的 Secret
         publish_dir: ./public  # 把生成的 public 文件夹推上去
