@@ -18,3 +18,9 @@ git commit -m "$msg"
 git push
 
 echo "--- 发布请求已发送，等待 GitHub Actions 自动构建 ---"
+
+# 停 2 秒，给 GitHub 反应时间来生成 Run ID
+sleep 2 
+
+# 监控最近的一个运行记录，完成后退出
+gh run watch
