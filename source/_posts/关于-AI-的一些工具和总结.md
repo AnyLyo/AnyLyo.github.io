@@ -27,7 +27,7 @@ Vibe Coding 由 Andrej Karpathy 在 2025 年初提出。它描述的是一种完
 Spec Coding（也叫 Spec-Driven Development）是针对 Vibe Coding 缺点的“进化版”。它的核心理念是：代码是意图的有损投影，规范（Specification）才是真正的源代码。
 
 - 核心逻辑：在让 AI 写代码之前，先和 AI 共同制定一套结构化的 Markdown 规范文档（即 Spec）。这个文档规定了系统的架构、API 协议、UI 规则。
-- 典型流程：Specify（定义规范） $\rightarrow$ Plan（制定计划） $\rightarrow$ Tasks（拆解任务） $\rightarrow$ Implement（AI 执行实现）。
+- 典型流程：Specify（定义规范） -> Plan（制定计划）  ->  Tasks（拆解任务）  ->  Implement（AI 执行实现）。
 - 特点：
     - 规范即源头：如果系统要改功能，先改 Spec，再让 AI 根据新 Spec 刷新代码。
     - 可维护性极强：AI 始终在“蓝图”范围内活动，不会乱跑。
