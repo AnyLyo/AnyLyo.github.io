@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <meta name="robots" content="index, follow">
+  <!-- title -->
+  
+    
+  <title>关于 AI 的一些工具和总结 - Hexo</title>
+    
+  
+  
+  <!-- open graph -->
+  <meta name="description" content="Vibe coding 和 Spec coding 什么是 Vibe Coding？（氛围感编程）  Vibe Coding 由 Andrej Karpathy 在 2025 年初提出。它描述的是一种完全沉浸在与 AI 交互的“氛围”中，甚至忘了代码本身存在的开发状态。  核心逻辑：开发者不再一行行写代码，而是通过自然语言向 AI 描述意图（Vibes）。AI 生成代码，你运行看看，不对就继续“聊">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于 AI 的一些工具和总结">
+<meta property="og:url" content="https://anylyo.github.io/2026/03/17/%E5%85%B3%E4%BA%8E-AI-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%92%8C%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vibe coding 和 Spec coding 什么是 Vibe Coding？（氛围感编程）  Vibe Coding 由 Andrej Karpathy 在 2025 年初提出。它描述的是一种完全沉浸在与 AI 交互的“氛围”中，甚至忘了代码本身存在的开发状态。  核心逻辑：开发者不再一行行写代码，而是通过自然语言向 AI 描述意图（Vibes）。AI 生成代码，你运行看看，不对就继续“聊">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-17T09:49:15.000Z">
+<meta property="article:modified_time" content="2026-03-17T02:23:31.813Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- canonical -->
+  
+  <link rel="canonical" href="https://AnyLyo.github.io/2026/03/17/关于-AI-的一些工具和总结/">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/reset.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/markdown.css">
+
+  
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">Hexo</a>
+    <!-- <div class="logo"><a href="/" title="Len"><img src="/img/logo.svg" alt="Len" aria-label="logo" height="20"></a></div> -->
+        <ul class="nav">
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/about">About</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+        </ul>
+
+
+    </a>
+</div>
+
+                
+                <div class="post-main">
+    
+        <div class="post-main-title">
+            关于 AI 的一些工具和总结
+        </div>
+        <div class="post-meta">
+            2026-03-17 ｜ 
+            
+        </div>
+        <!-- 圆角分类 -->
+        <!-- <div class="tags"> -->
+            <!--  -->
+        <!-- </div> -->
+        <div class="post-md">
+            <h3 id="Vibe-coding-和-Spec-coding"><a href="#Vibe-coding-和-Spec-coding" class="headerlink" title="Vibe coding 和 Spec coding"></a>Vibe coding 和 Spec coding</h3><ol>
+<li>什么是 Vibe Coding？（氛围感编程）</li>
+</ol>
+<p>Vibe Coding 由 Andrej Karpathy 在 2025 年初提出。它描述的是一种完全沉浸在与 AI 交互的“氛围”中，甚至忘了代码本身存在的开发状态。</p>
+<ul>
+<li><p>核心逻辑：开发者不再一行行写代码，而是通过自然语言向 AI 描述意图（Vibes）。AI 生成代码，你运行看看，不对就继续“聊”，直到效果出来。</p>
+</li>
+<li><p>代表工具：Cursor (Composer 模式)、Replit Agent、Claude Code。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><p>极速原型：适合从 0 到 1 快速搭出一个 Demo。</p>
+</li>
+<li><p>低心智负担：你不需要思考变量名、循环逻辑，只需思考“我想要什么”。</p>
+</li>
+</ul>
+</li>
+<li><p>“黑盒”倾向：开发者往往不看 AI 写了什么，只要跑通了就行。</p>
+</li>
+<li><p>风险：容易产生“屎山”代码，难以维护，且当逻辑变得极其复杂时，AI 容易陷入“修好 A 坏了 B”的死循环。</p>
+</li>
+</ul>
+<ol start="2">
+<li>什么是 Spec Coding？（规范驱动编程）</li>
+</ol>
+<p>Spec Coding（也叫 Spec-Driven Development）是针对 Vibe Coding 缺点的“进化版”。它的核心理念是：代码是意图的有损投影，规范（Specification）才是真正的源代码。</p>
+<ul>
+<li><p>核心逻辑：在让 AI 写代码之前，先和 AI 共同制定一套结构化的 Markdown 规范文档（即 Spec）。这个文档规定了系统的架构、API 协议、UI 规则。</p>
+</li>
+<li><p>典型流程：Specify（定义规范） $\rightarrow$ Plan（制定计划） $\rightarrow$ Tasks（拆解任务） $\rightarrow$ Implement（AI 执行实现）。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>规范即源头：如果系统要改功能，先改 Spec，再让 AI 根据新 Spec 刷新代码。</li>
+<li>可维护性极强：AI 始终在“蓝图”范围内活动，不会乱跑。</li>
+<li>多智能体协作：适合多个 AI Agent 同时开发同一个项目，因为它们共享同一个“真理来源”。</li>
+</ul>
+</li>
+<li><p>代表工具&#x2F;方法论：GitHub Spec Kit、Sean Grove 的 “The New Code” 理论。</p>
+</li>
+</ul>
+<h3 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h3><p>Claude Code Cli、Codex Cli、Gemini Cli、CC-Switch</p>
+<p>接下来准备进阶一下：CCG、MCP、OpenClaw、Skills等</p>
+<h3 id="Skills-网站"><a href="#Skills-网站" class="headerlink" title="Skills 网站"></a>Skills 网站</h3><p><a target="_blank" rel="noopener" href="https://skillsmp.com/zh">https://skillsmp.com/zh</a></p>
+<h4 id="Claude管理skills和mcp工具"><a href="#Claude管理skills和mcp工具" class="headerlink" title="Claude管理skills和mcp工具"></a>Claude管理skills和mcp工具</h4><p><a target="_blank" rel="noopener" href="https://linux.do/t/topic/1662595">https://linux.do/t/topic/1662595</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/LAIJiangFeng/Agent-Forge">https://github.com/LAIJiangFeng/Agent-Forge</a></p>
+<p>通过腾讯云SkillHub给OpenClaw安装skills：<a target="_blank" rel="noopener" href="https://linux.do/t/topic/1706040">https://linux.do/t/topic/1706040</a></p>
+<h3 id="大佬的一些-Ai-流程总结"><a href="#大佬的一些-Ai-流程总结" class="headerlink" title="大佬的一些 Ai 流程总结"></a>大佬的一些 Ai 流程总结</h3><p><a target="_blank" rel="noopener" href="https://lemonadec.cc/posts/new-ai-tools-for-me?lang=zh">https://lemonadec.cc/posts/new-ai-tools-for-me?lang=zh</a></p>
+
+        </div>
+    
+<!-- tags -->
+
+</div>
+                <div class="footer">
+    <span>Copyright © <script>document.write(new Date().getFullYear())</script> Hexo</span>
+    <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> with <a target="_blank" rel="noopener" href="https:///imzl.com/zenmind">ZenMind</a></span>
+</div>
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
